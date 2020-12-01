@@ -2,8 +2,8 @@
 items:
   - text: Menu One
     url: "#"
-  - text: Menu Two
-    url: "#"
+  - text: Portfolio
+    url: "/portfolio"
   - text: Menu Three
     url: "#"
   - text: Blog
