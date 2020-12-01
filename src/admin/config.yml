@@ -23,7 +23,12 @@ collections:
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Link", name: "link", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Image", name: "image", widget: "image", required: false}
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - label: "Gallery"
+        name: "galleryImages"
+        widget: "list"
+        summary: '{{fields.image}}'
+        field: {label: "Gallery image", name: "galleryImage", widget: "image"}
   - label: "Settings"
     name: "settings"
     editor:

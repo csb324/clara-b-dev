@@ -1,6 +1,7 @@
 const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const util = require('util')
 
 module.exports = function (eleventyConfig) {
   // Disable automatic use of your .gitignore
@@ -37,6 +38,15 @@ module.exports = function (eleventyConfig) {
 
   // Copy Image Folder to /_site
   eleventyConfig.addPassthroughCopy("./src/static/img");
+
+  eleventyConfig.addFilter('dump', obj => {
+    return util.inspect(obj)
+  });
+
+  eleventyConfig.addFilter('getKeys', obj => {
+    return Object.keys(obj)
+  });
+
 
   // Let Eleventy transform HTML files as nunjucks
   // So that we can use .html instead of .njk
