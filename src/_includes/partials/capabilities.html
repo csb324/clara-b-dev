@@ -22,13 +22,14 @@
   <div class="container max-w-5xl mx-auto my-16 ">
     
     <h2 class="text-center md:text-left text-xl md:text-4xl mb-15">past work</h2>
-    
+  
     <div class="flex">
 
-      {% for post in collections.project | reverse | slice 0,2 %}
+      {% set posts = collections.project %}
+      {% for post in posts | reverse | slice(2) | first %}
         <article class="my-8 bg-white md:flex-1">
 
-          <img src="{{ post.data.image }}" >
+          <img src="{{ post.data.image }}" />
 
           <h2 class="font-bold text-xl text-gray-900 p-2 mb-2">
             <a href="{{ post.url | url }}">
