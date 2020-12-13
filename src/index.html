@@ -1,15 +1,18 @@
 ---
 layout: default
-title: Clara B Development
+title: hi! my name is clara, and i'm a web developer and designer based in washington dc.
 path: home
 ---
 
-<div class="container mx-auto lg:h-screen flex flex-col justify-center items-center">
-  <h1 class="font-display">
-    <strong class="bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-coral-500">
-      {{title}}
-    </strong>
-  </h1>
 
-  {% include "./_includes/partials/content.html" %}
+<div class="bg-image-glitch bg-cover p-3">
+  <img alt="Clara B Development" src="/static/img/white logo@4x.png" class="w-32 mx-auto my-8 md:my-12" />
+  <div class="header-container bg-white mx-auto mb-8 md:mb-20 mt-6 py-6 px-10 max-w-5xl shadow-xl">
+    <h1 class="font-display font-bold text-left leading-relaxed tracking-wide text-xl md:text-4xl lg:text-5xl">
+      {{title}}
+    </h1>
+  </div>
 </div>
+
+{% include "./_includes/partials/capabilities.html" %}
+

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,11 +7,12 @@
 /*Your Custom CSS Goes here*/
 
 body {
-  @apply font-body;
+  @apply font-body;  
+  -webkit-font-smoothing: antialiased;
 }
 
 h1 {
-  @apply font-display text-4xl tracking-tighter mb-3 text-center lg:text-7xl;
+  @apply font-display text-4xl mb-3 text-center lg:text-7xl leading-6;
 }
 
 h2 {
@@ -18,6 +21,10 @@ h2 {
 
 h3 {
   @apply text-2xl font-bold mb-3 font-display;
+}
+
+.bg-image-glitch {
+  background-image: url('/static/img/glitch-multi.jpg');
 }
 
 /* Syntax Highlighting*/
