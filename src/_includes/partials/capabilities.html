@@ -31,7 +31,13 @@
 
           <a href="{{ post.url | url }}" class="block mx-auto pb-1 text-left my-8 bg-white text-gray-900 hover:text-teal-500 shadow-lg">
             <div class="relative">
-              <img src="{{ post.data.image }}?nf_resize=smartcrop&w=300&h=400" alt="" class="w-full" />
+              <img 
+                src="{{ post.data.image }}?nf_resize=smartcrop&w=960&h=640" 
+                alt="" 
+                class="w-full" 
+                srcset="{{ post.data.image }}?nf_resize=smartcrop&w=480&h=320,
+                  {{ post.data.image }}?nf_resize=smartcrop&w=960&h=640 2x"
+              />
             </div>
 
             <h2 class="font-bold text-xl  px-5 pb-1 pt-4 mb-2">
