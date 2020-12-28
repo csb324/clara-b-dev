@@ -30,9 +30,8 @@
         <div class="text-center flex-grow p-2">
 
           <a href="{{ post.url | url }}" class="block mx-auto pb-1 text-left my-8 bg-white text-gray-900 hover:text-teal-500 shadow-lg">
-            <div class="relative pb-56 overflow-hidden">
-              <img src="{{ post.data.image }}" alt="" class="top-1/2 transform -translate-y-1/2 absolute" />
-
+            <div class="relative">
+              <img src="{{ post.data.image }}?nf_resize=smartcrop&w=300&h=400" alt="" class="w-full" />
             </div>
 
             <h2 class="font-bold text-xl  px-5 pb-1 pt-4 mb-2">
