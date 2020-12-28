@@ -5,31 +5,41 @@ layout: default
 
 
 
-<div class="container max-w-full mt-6 px-2">
+<div class="container mt-6 px-2">
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-    {% if image %}
-      <img src="{{image}}" alt="{{title}}" class="max-w-full" />
-    {% endif %}
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
 
-    <div class="p-6">
-      <h1 class="text-left font-bold text-5xl">{{title}}</h1>
-  
-      <article class="prose lg:prose-xl mt-4 mb-8">
-        {{ content | safe }}
-      </article>
+
+  </div>
+
+  <div class="container max-w-6xl">    
+    <div class="grid py-4 grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+
+      <img src="{{image}}" alt="{{title}}" class="max-w-full row-start-1 lg:col-start-1 row-span-2" />
+
+      <div class=" lg:col-start-2 lg:row-span-3">
+        <h1 class="text-left font-bold leading-relaxed text-5xl">{{title}}</h1>
+        <article class="prose lg:prose-xl mt-4 mb-8">
+          {{ content | safe }}
+        </article>
+      </div>
+
+      {% set length = galleryImages | length %}
+      {% for i in range(0, length) %}
+        {% set image = galleryImages[i] %}
+
+        <img src="{{image}}" alt="{{title}}" class="
+          row-span-2
+          max-w-full 
+          border-gray-100 
+          border 
+          rounded-sm" />
+
+      {% endfor %}
     </div>
-
   </div>
 
-  <div class="grid py-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    <img src="{{image}}" alt="{{title}}" class="max-w-full" />
-    <img src="{{image}}" alt="{{title}}" class="max-w-full" />
-    <img src="{{image}}" alt="{{title}}" class="max-w-full" />
-    <img src="{{image}}" alt="{{title}}" class="max-w-full" />
-    <img src="{{image}}" alt="{{title}}" class="max-w-full" />
-
-  </div>
 </div>
 
 

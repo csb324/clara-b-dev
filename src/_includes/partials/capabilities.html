@@ -1,17 +1,15 @@
 <div class="container  max-w-5xl mx-auto my-16 px-5">
   
-  <h2 class="text-center md:text-left text-xl md:text-4xl mb-15">{{homecontent.title}}</h2>
+  <h2 class="text-center md:text-left text-2xl md:text-4xl mb-15">{{homecontent.title}}</h2>
   
   <div class="w-full flex flex-wrap md:flex-no-wrap justify-between my-8">
     
-    {% if homecontent.capabilities %}
-      {% for item in homecontent.capabilities %}
-        <div class="w-full flex-none md:w-60 mb-10">
-          <h3 class="text-lg md:text-xl">{{item.title}}</h3>
-          <p class="leading-relaxed">{{item.text}}</p>
-        </div>
-      {% endfor %}
-    {% endif %}
+    {% for item in homecontent.capabilities %}
+      <div class="w-full flex-none md:w-60 mb-10">
+        <h3 class="text-lg md:text-xl">{{item.title}}</h3>
+        <p class="leading-relaxed">{{item.text}}</p>
+      </div>
+    {% endfor %}
     
   </div>
   
@@ -21,29 +19,37 @@
   
   <div class="container max-w-5xl mx-auto my-16 ">
     
-    <h2 class="text-center md:text-left text-xl md:text-4xl mb-15">past work</h2>
+    <h2 class="text-center md:text-left text-2xl md:text-4xl mb-15">past work</h2>
   
-    <div class="flex">
+    <div class="flex flex-wrap justify-center md:justify-between text-center">
 
-      {% set posts = collections.project %}
-      {% for post in posts | reverse | slice(2) | first %}
-        <article class="my-8 bg-white md:flex-1">
+      {% set posts = collections.project | reverse %}
 
-          <img src="{{ post.data.image }}" />
+      {% for i in range(0, 2) %}
+        {% set post = posts[i] %}
+        <div class="text-center flex-grow p-2">
 
-          <h2 class="font-bold text-xl text-gray-900 p-2 mb-2">
-            <a href="{{ post.url | url }}">
-              {% if post.data.title %}
-                {{ post.data.title }}
-              {% else %}
-                Untitled
-              {% endif %}
-            </a>
-          </h2>
-          
-        </article>
+          <a href="{{ post.url | url }}" class="block mx-auto pb-1 text-left my-8 bg-white text-gray-900 hover:text-teal-500 shadow-lg">
+            <div class="relative pb-56 overflow-hidden">
+              <img src="{{ post.data.image }}" alt="" class="top-1/2 transform -translate-y-1/2 absolute" />
+
+            </div>
+
+            <h2 class="font-bold text-xl  px-5 pb-1 pt-4 mb-2">
+              {{ post.data.title }}
+            </h2>
+            
+          </a>
+        </div>
+
       {% endfor %}
     </div>
   </div>
+</div>
 
+<div class="container max-w-5xl mx-auto my-16">
+  {% for item in homecontent.testimonials %}
+    <div class=" text-4xl mx-auto">&ldquo;{{item.text}}&rdquo;</div>
+    <div>- {{item.from}}</div>
+  {% endfor %}
 </div>
