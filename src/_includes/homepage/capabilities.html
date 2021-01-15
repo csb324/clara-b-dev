@@ -1,0 +1,16 @@
+<div class="container  max-w-5xl mx-auto my-16 px-5">
+  
+  <h2 class="text-center md:text-left text-2xl md:text-4xl mb-15">{{homecontent.title}}</h2>
+  
+  <div class="w-full flex flex-wrap md:flex-no-wrap justify-between my-8">
+    
+    {% for item in homecontent.capabilities %}
+      <div class="w-full flex-none md:w-60 mb-10">
+        <h3 class="text-lg md:text-xl">{{item.title}}</h3>
+        <p class="leading-relaxed">{{item.text}}</p>
+      </div>
+    {% endfor %}
+    
+  </div>
+  
+</div>

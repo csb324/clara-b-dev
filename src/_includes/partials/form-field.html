@@ -1,0 +1,21 @@
+{% macro formField(labelText, fieldName, type='text') %}
+<div 
+  x-data="{ touched: false }" 
+  class="form-line mb-4 relative text-xl border-gray-200 border md:flex-grow mr-4 md:w-1/4">
+  
+  <label for="{{fieldName}}" class="absolute inset-y-2 inset-x-4 pointer-events-none">
+    <span x-show.transition="!touched">
+      {{ labelText }}
+    </span>
+  </label>
+
+  <input 
+    x-ref="field" 
+    @focus="touched = true" 
+    @focusout="touched = ($refs.field.value.length > 0);" 
+    type="{{type}}" 
+    name="{{fieldName}}" 
+    class="py-2 px-4 block w-full" />  
+</div>
+
+{% endmacro %}

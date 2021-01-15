@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -25,6 +25,66 @@ h3 {
 
 .bg-image-glitch {
   background-image: url('/static/img/glitch-multi.jpg');
+}
+
+.bg-image-pattern {
+  background-image: url('/static/img/pattern.jpg');
+  background-size: 500px; 
+}
+
+
+.whisker {
+  opacity: 0;
+  @apply transform;
+  @apply rotate-12;
+  transition: 0.2s opacity cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+button:hover+.whisker {
+  opacity: 1;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+.crazy-hover-effect {
+  position: relative;
+}
+.crazy-hover-effect * {
+  position: relative;
+  z-index: 5;
+}
+
+.crazy-hover-effect::before, 
+.crazy-hover-effect::after {
+  content: "";
+  display: block;
+  height: 70%;
+  width: 100%;
+  position: absolute;
+  z-index: 4;
+  border-style: solid;
+  @apply border-coral-500;
+  transition: 0.1s ease-in-out;
+  transform: skewX(-30deg) scaleX(0.9);
+}
+.crazy-hover-effect::after {
+  border-width: 0.5em 0 0.25em 0;
+  bottom: 0;
+  right: 0;
+}
+.crazy-hover-effect::before {
+  border-width: 0.3em 0 0.5em 0;
+  top: 0;
+  left: 0;
+}
+
+.crazy-hover-effect:hover:before {
+  left: 1em;
+}
+.crazy-hover-effect:hover:after {
+  right: 1em;
 }
 
 /* Syntax Highlighting*/
