@@ -4,7 +4,7 @@
   <div class="container max-w-5xl mx-auto my-16 ">
     <h2 class="text-center md:text-left text-3xl md:text-4xl mb-15 px-5">schedule a call</h2>
 
-    <form name="contact" method="POST" x-data="form()" @submit.prevent="submitData($el)()" class="py-3 px-5 md:flex flex-wrap items-center font-light relative" netlify>
+    <form name="contact" netlify x-data="form()" @submit.prevent="submit($el)" class="py-3 px-5 md:flex flex-wrap items-center font-light relative">
       
       {{ formField('Name', 'name') }}
       {{ formField('Email', 'email', 'email') }}
@@ -44,38 +44,74 @@
       loading: false,
       submitted: false,
 
-      submitData(f) {
-        $el = f;
-        console.log(f)
-        return function() {
-          console.log("submitting!")
-          this.message = '';
-          this.loading = true;
+      submit(form) {
+        console.log("submitting");
+        var XHR = new XMLHttpRequest();
+        var formData = new FormData(form);
+        this.loading = true;
+        this.submitted = true;
+        const c = this;
 
-          let data = new FormData($el);
+        XHR.addEventListener('load', (event) => {
+          console.log(event);
+          c.loading = false;
+          c.message = "talk to you soon!";
+        });
 
-          fetch('#', {
-            method: 'POST',
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(data).toString()
-          })
-          .then((response) => {
-            console.log(response);
-            this.message = 'talk to you soon!';
-          })
-          .catch(() => {
-            this.message = 'something went wrong :/';
-          })
-          .finally(() => {
-            this.loading = false;
-            this.submitted = true;
+        XHR.addEventListener('error', (event) => {
+          console.log(event);
+          c.loading = false;
+          c.message = "oh no";
+        });
 
-            setTimeout(() => {
-              this.submitted = false;
-            }, 10000)
-          });
-        }.bind(this);
+        XHR.open('POST', '#');
+        XHR.send(formData);
+        
       }
     }
   }
+
+  // function submit(el) {
+  //   console.log("submitting!");
+  //   console.log(el);
+
+  //   // XHR.addEventListener('load', function(event) {
+  //   //   form.classList.add('inactive')
+  //   //   var success = document.querySelectorAll('.post-sent')[0]
+  //   //   success.classList.add('active')
+  //   // })
+  //   // XHR.addEventListener('error', function(event) {
+  //   //   form.classList.add('inactive')
+  //   //   var error = document.querySelectorAll('.post-error')[0]
+  //   //   error.classList.add('active')
+  //   // })
+  //   // XHR.open('POST', '#')
+  //   // XHR.send(FD)
+
+  //   // this.message = '';
+  //   // this.loading = true;
+
+  //   // let data = new FormData($el);
+
+  //   // fetch('#', {
+  //   //   method: 'POST',
+  //   //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //   //   body: new URLSearchParams(data).toString()
+  //   // })
+  //   // .then((response) => {
+  //   //   console.log(response);
+  //   //   this.message = 'talk to you soon!';
+  //   // })
+  //   // .catch(() => {
+  //   //   this.message = 'something went wrong :/';
+  //   // })
+  //   // .finally(() => {
+  //   //   this.loading = false;
+  //   //   this.submitted = true;
+
+  //   //   setTimeout(() => {
+  //   //     this.submitted = false;
+  //   //   }, 10000)
+  //   // });
+  // }
 </script>
