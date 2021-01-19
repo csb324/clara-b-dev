@@ -1,10 +1,10 @@
 {% from "../partials/form-field.html" import formField with context %}
 
 <div class="p-5">
-  <div class="container max-w-5xl mx-auto my-16 ">
+  <div class="container max-w-5xl mx-auto my-16 " x-data="form()">
     <h2 class="text-center md:text-left text-3xl md:text-4xl mb-15 px-5">schedule a call</h2>
 
-    <form action="/" name="contact-clara" data-netlify="true" x-data="form()" @submit.prevent="submit($el)" class="py-3 px-5 md:flex flex-wrap items-center font-light relative">
+    <form action="/" id="contact-clara" name="contact-clara" data-netlify="true" @submit.prevent="submit" class="py-3 px-5 md:flex flex-wrap items-center font-light relative">
       
       {{ formField('Name', 'name') }}
       {{ formField('Email', 'email', 'email') }}
@@ -44,10 +44,10 @@
       loading: false,
       submitted: false,
 
-      submit(form) {
+      submit() {
         console.log("submitting");
         var XHR = new XMLHttpRequest();
-        var formData = new FormData(form);
+        var formData = new FormData(document.getElementById('contact-clara'));
         this.loading = true;
         this.submitted = true;
         const c = this;
