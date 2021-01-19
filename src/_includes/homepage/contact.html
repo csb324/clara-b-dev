@@ -4,8 +4,10 @@
   <div class="container max-w-5xl mx-auto my-16 " x-data="form()">
     <h2 class="text-center md:text-left text-3xl md:text-4xl mb-15 px-5">schedule a call</h2>
 
-    <form action="/" id="contact-clara" name="contact-clara" data-netlify="true" @submit.prevent="submit" class="py-3 px-5 md:flex flex-wrap items-center font-light relative">
-      
+    <form action="/" id="contact-clara" name="contact-clara-js" data-netlify="true" @submit.prevent="submit" class="py-3 px-5 md:flex flex-wrap items-center font-light relative">
+
+      <input type="hidden" name="form-name" value="contact-clara" />
+
       {{ formField('Name', 'name') }}
       {{ formField('Email', 'email', 'email') }}
       {{ formField('Website (optional)', 'website') }}
