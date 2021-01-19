@@ -1,6 +1,7 @@
 ---
 layout: default
-title: hi! my name is clara, and i'm a web developer and designer based in washington dc.
+title: Clara B. Development
+headline: hi! my name is clara, and i'm a web developer and designer based in washington dc.
 path: home
 ---
 
@@ -9,7 +10,7 @@ path: home
   <img alt="Clara B Development" src="/static/img/white logo@4x.png" class="w-32 mx-auto my-8 md:my-12" />
   <div class="header-container bg-white mx-auto mb-8 md:mb-20 mt-6 py-6 px-10 max-w-5xl shadow-xl">
     <h1 class="font-display font-bold text-left leading-relaxed tracking-wide text-xl md:text-4xl lg:text-5xl">
-      {{title}}
+      {{headline}}
 
     </h1>
   </div>
@@ -20,7 +21,7 @@ path: home
 {% include "./_includes/homepage/contact.html" %}
 <!-- {% include "./_includes/homepage/testimonials.html" %} -->
 
-<form name="contact-clara" netlify data-netlify="true">
+<form name="contact-clara" netlify data-netlify="true" class="hidden">
   <input type="hidden" name="name">
   <input type="hidden" name="email">  
   <input type="hidden" name="website">
