@@ -4,7 +4,7 @@
   <div class="container max-w-5xl mx-auto my-16 ">
     <h2 class="text-center md:text-left text-3xl md:text-4xl mb-15 px-5">schedule a call</h2>
 
-    <form name="contact" netlify x-data="form()" @submit.prevent="submit($el)" class="py-3 px-5 md:flex flex-wrap items-center font-light relative">
+    <form name="contact" data-netlify="true" x-data="form()" @submit.prevent="submit($el)" class="py-3 px-5 md:flex flex-wrap items-center font-light relative">
       
       {{ formField('Name', 'name') }}
       {{ formField('Email', 'email', 'email') }}
