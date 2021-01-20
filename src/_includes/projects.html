@@ -27,23 +27,20 @@ layout: default
 
       {% set length = galleryImages | length %}
       {% for i in range(0, length) %}
-        {% set image = galleryImages[i] %}
+        {% set image = galleryImages[i] %}        
 
-        <img src="{{image}}" alt="{{title}}" class="
+        <img src="{{image}}?nf_resize=fit&w=500" alt="{{title}}" class="
           row-span-2
           max-w-full 
           border-gray-100 
           border 
-          rounded-sm" />
+          rounded-sm"
+          srcset="{{ image }}?nf_resize=fit&w=550 550w,
+            {{ image }}?nf_resize=fit&w=1100 1100w" 
+          sizes="(min-width: 1024px) 550px, 100vw" />
 
       {% endfor %}
     </div>
   </div>
 
-</div>
-
-
-<div class="container max-w-full px-2">
-  {% if image %}
-  {% endif %}
 </div>
