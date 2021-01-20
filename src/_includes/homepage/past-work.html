@@ -3,7 +3,7 @@
     <h2 class="text-center md:text-left text-3xl md:text-4xl mb-15 px-5">past work</h2>
     <div class="flex flex-wrap justify-center md:justify-between items-start text-center">
 
-    {% set posts = collections.project | reverse %}
+    {% set posts = collections.project %}
 
     {% for i in range(0, 2) %}
         {% set post = posts[i] %}

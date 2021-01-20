@@ -2,3 +2,16 @@
 name: Clara B Development
 author: Clara Beyer
 url: "https://www.clarabdevelopment.com/"
+socials:
+  - name: twitter
+    url: "https://twitter.com/clarabellum"
+    extra_class: rotate-12
+  - name: github
+    url: "http://github.com/csb324"
+    extra_class: -rotate-3
+  - name: instagram
+    url: "https://instagram.com/clarabdevelopment"
+    extra_class: -rotate-12
+  - name: linkedin
+    url: "https://www.linkedin.com/in/clarabeyer/"
+    extra_class: rotate-6

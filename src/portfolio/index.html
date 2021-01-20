@@ -12,14 +12,14 @@ layout: default
         {% set postslist = collections.project %}
 
         {% for post in postslist | reverse %}
-            <article class="my-8">
-                <h2 class="font-bold text-3xl text-gray-900 mb-2">
-                    <a href="{{ post.url | url }}">
+            <article class="my-16">
+                <h2 class="font-bold text-3xl mb-2">
+                    <a class="text-gray-900 hover:text-coral-500" href="{{ post.url | url }}">
                         {% if post.data.title %}
                             {{ post.data.title }}
                         {% else %}
                             Untitled
-                        {% endif %}
+                       {% endif %}
                     </a>
                 </h2>
 
@@ -30,7 +30,7 @@ layout: default
                 {% endif %}
 
                 <p>
-                    <a href="{{ post.url | url }}" class="text-indigo-500 font-bold text-lg">
+                    <a href="{{ post.url | url }}" class="text-teal-400 hover:text-coral-500 font-bold font-display uppercase text-md">
                         Read more →
                     </a>
                 </p>
