@@ -48,6 +48,10 @@ button:disabled {
   opacity: 0.5;
 }
 
+/* .shadow-text {
+  text-shadow: 1px #ffffff;
+} */
+
 .crazy-hover-effect {
   position: relative;
 }

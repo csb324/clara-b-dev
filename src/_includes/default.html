@@ -18,11 +18,14 @@
   <body>
     {% include "./partials/navbar.html" %}
 
-    {{ content | safe }}
+    <div class="content">
+      {{ content | safe }}
+    </div>
 
     {% include "./partials/footer.html" %}
 
     <script src="/static/js/alpine.js"></script>
+
 
     {% if path == "home" %}
       <!-- Netlify Identity Widget -->

@@ -2,9 +2,9 @@
 
 <div 
   x-data="{ touched: false }" 
-  class="form-line mb-4 relative text-xl border-gray-200 border md:flex-grow mr-4 md:w-1/4">
+  class="form-line mb-4 relative text-xl border-gray-200 border md:flex-grow md:mr-4 md:w-1/4">
   
-  <label for="{{fieldName}}" class="absolute inset-y-2 inset-x-4 pointer-events-none">
+  <label for="{{fieldName}}" class="absolute inset-y-2 inset-x-4 pointer-events-none whitespace-no-wrap">
     <span x-show.transition="!touched">
       {{ labelText }}
     </span>
