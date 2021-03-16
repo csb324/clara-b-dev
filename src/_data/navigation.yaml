@@ -2,3 +2,6 @@
 items:
   - text: My Work
     url: "/portfolio"
+  - text: Let's Talk
+    url: "/work-with-me"
+    button: true

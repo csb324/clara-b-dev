@@ -24,7 +24,12 @@
                 <ul class="pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center">
                     {% for item in navigation.items %}
                         <li class="nav__item mr-3">
+                        {% if item.button %}
+                            <a @click="isOpen = false" class="text-ml lowercase font-bold text-white inline-block bg-teal-500 no-underline hover:bg-coral-500 py-2 px-4" href="{{ item.url }}">{{ item.text }}</a>
+                        {% else %}
                             <a @click="isOpen = false" class="text-ml inline-block text-gray-500 no-underline hover:text-coral-500 py-2 px-4" href="{{ item.url }}">{{ item.text }}</a>
+
+                        {% endif %}
                         </li>
                     {% endfor %}
                 </ul>

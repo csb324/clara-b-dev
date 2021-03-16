@@ -9,7 +9,7 @@
   {{ formField('Your Name', 'name') }}
   {{ formField('Email', 'email', 'email') }}
   {{ formField('Organization Name', 'org') }}
-  {{ formField('How long has your organization been running?', 'name') }}
+  {{ formField('How long has your organization been running?', 'org-time') }}
   {{ formField('Your Website', 'website') }}
 
   <div class="form-line relative text-xl w-full md:pr-4 mb-4" x-data="{ touched: false }" >
@@ -33,7 +33,7 @@
       type="submit"
       class="inline-block px-4 py-2  text-white font-display font-bold text-xl"
       :class="{ 'pointer-events-none bg-gray-400': loading, 'bg-coral-500 hover:bg-teal-500': !loading }">          
-      <span class="z-10">talk soon!</span>
+      <span class="z-10">send</span>
     </button>
     <img alt="" src="/static/img/whisker.png" class="absolute -left-10 -bottom-9 w-12 whisker" />
   </div>
