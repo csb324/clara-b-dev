@@ -1,0 +1,83 @@
+{% from "./form-field.html" import formField with context %}
+
+<div  x-data="form()">
+
+<form action="/" id="contact-clara" name="contact-clara-js" data-netlify="true" @submit.prevent="submit" class="py-3 md:flex flex-wrap items-center font-light relative">
+
+  <input type="hidden" name="form-name" value="contact-clara" />
+
+  {{ formField('Your Name', 'name') }}
+  {{ formField('Email', 'email', 'email') }}
+  {{ formField('Organization Name', 'org') }}
+  {{ formField('How long has your organization been running?', 'name') }}
+  {{ formField('Your Website', 'website') }}
+
+  <div class="form-line relative text-xl w-full md:pr-4 mb-4" x-data="{ touched: false }" >
+    <label class="w-full mb-2 font-display text-base font-bold tracking-wide uppercase block"
+      :class="{ 'text-teal-400': touched, 'text-gray-600': !touched }">Tell me a little about your organization! How can I help?</label>
+
+    <textarea 
+    x-ref="field" 
+    @focus="touched = true" 
+    @focusout="touched = ($refs.field.value.length > 0);" 
+    name="comment"
+    class=" border-gray-100 border py-2 px-4 block w-full"></textarea>
+  </div>
+
+  {{ formField('Phone Number', 'phone', 'tel') }}
+  {{ formField('Where are you located?', 'city') }}
+  {{ formField('How did you hear about Clara B. Development?', 'source') }}
+
+  <div class="relative md:pr-5">
+    <button 
+      type="submit"
+      class="inline-block px-4 py-2  text-white font-display font-bold text-xl"
+      :class="{ 'pointer-events-none bg-gray-400': loading, 'bg-coral-500 hover:bg-teal-500': !loading }">          
+      <span class="z-10">talk soon!</span>
+    </button>
+    <img alt="" src="/static/img/whisker.png" class="absolute -left-10 -bottom-9 w-12 whisker" />
+  </div>
+
+  <p 
+    :class="{'opacity-0': !submitted, 'opacity-100': submitted}"
+    class="w-full md:w-auto md:flex-grow md:my-4 mt-4 font-display transition-opacity duration-300" 
+    x-text="message"></p>
+
+</form>
+
+</div>
+
+<script>
+  function form() {
+    return {
+      message: '&nbsp;',
+      loading: false,
+      submitted: false,
+
+      submit() {
+        console.log("submitting");
+        var XHR = new XMLHttpRequest();
+        var formData = new FormData(document.getElementById('contact-clara'));
+        this.loading = true;
+        this.submitted = true;
+        const c = this;
+
+        XHR.addEventListener('load', (event) => {
+          console.log(event);
+          c.loading = false;
+          c.message = "talk to you soon!";
+        });
+
+        XHR.addEventListener('error', (event) => {
+          console.log(event);
+          c.loading = false;
+          c.message = "oh no";
+        });
+
+        XHR.open('POST', '#');
+        XHR.send(formData);
+        
+      }
+    }
+  }
+</script>

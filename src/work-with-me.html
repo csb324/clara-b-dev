@@ -1,0 +1,32 @@
+---
+layout: default
+title: Clara B. Development
+headline: let's talk!
+path: home
+---
+
+
+<div class="bg-image-glitch bg-cover p-3">
+
+  <div class="header-container text-center bg-white mx-auto my-8 md:my-20 py-6 px-10 max-w-xl shadow-xl">
+    <h1 class="font-display font-bold text-center leading-relaxed tracking-wide text-xl md:text-4xl lg:text-5xl">
+      {{headline}}
+    </h1>
+  </div>
+</div>
+
+
+<div class="container max-w-3xl my-8 md:my-14 px-5">
+  <p class="text-lg leading-relaxed">If you'd like to work together, the first step is to set up an intro call! Tell me a little about your goals, using the form below, and I'll get back to you within 48 hours to set something up.</p>
+</div>
+
+<div class="container max-w-3xl my-8 md:my-14 px-5">
+  {% include './_includes/partials/contact-form.html' %}
+</div>
+
+<form name="contact-clara" netlify data-netlify="true" class="hidden">
+  <input type="hidden" name="name">
+  <input type="hidden" name="email">  
+  <input type="hidden" name="website">
+  <input type="hidden" name="comment">
+</form>
