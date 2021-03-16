@@ -2,7 +2,7 @@
 title: ASIL Ventures
 description: Web design, WordPress development, and professional assets
 link: https://asilventures.com/
-image: /static/img/screen-shot-2021-03-16-at-6.33.06-pm.png
+image: /static/img/asil-desktop.png
 galleryImages:
   - /static/img/asil-mockup.jpg
 ---
