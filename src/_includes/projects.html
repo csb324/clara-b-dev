@@ -1,12 +1,23 @@
 ---
 layout: default
 ---
+
 <div class="container mt-6 px-2">
 
   <div class="container max-w-6xl">    
+    <!-- {% if tags.includes("showLive") %}
+      <div id="livePreview"></div>
+    {% endif %} -->
+    
     <div class="grid py-4 grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-      <img src="{{image}}" alt="{{title}}" class="max-w-full row-start-1 lg:col-start-1 row-span-2" />
+      <div class="max-w-full row-start-1 lg:col-start-1 row-span-2">
+        {% if tags.includes("showLive") %}
+          <div id="livePreview" class="flex justify-center"></div>
+        {% else %}
+          <img src="{{image}}" alt="{{title}}" class="max-w-full" />          
+        {% endif %}
+      </div>
 
       <div class=" lg:col-start-2 lg:row-span-3">
         <h1 class="text-left font-bold leading-relaxed text-5xl">{{title}}</h1>
