@@ -19,9 +19,9 @@ galleryImages:
 
 ## I've been on a real generative art kick.
 
-Generative art is actually what got me started in the programming world, but my latest kick started a few months ago, when I discovered [Raphaël de Courville](https://twitter.com/sableRaph)'s weekly Creative Code Challenges. Not content with a weekly challenge, I started a daily coding challenge for the month of October. This was going well, until I broke my leg at a bachelorette party and sort of lost steam. Luckily, the generative art community actually already *had* a monthly creative coding challenge, and theirs was in January. So I joined that too.
+Generative art is actually what got me started in the programming world, but my latest kick started a few months ago, when I discovered [Raphaël de Courville](https://twitter.com/sableRaph)'s weekly Creative Code Challenges. Not content with a weekly challenge, I started a daily coding challenge for the [month of October](https://codesketchtober.netlify.app). This was going well, until I broke my leg at a bachelorette party and sort of lost steam. Luckily, the generative art community actually already *had* a monthly creative coding challenge, and theirs was in [January](https://genuary.art). So I joined that too.
 
-Now it is february. I've created a lot of pieces I'm proud of in the last few months. But the question remains: What *are* these things? What exactly is it that I'm doing over here? 
+Now it is February. I've created a lot of pieces I'm proud of in the last few months. But the question remains: What *are* these things? What exactly is it that I'm doing over here? 
 
 Many people have asked me to explain, and I have tried. But I do not think I have done a very good job, or they would have stopped asking by now. And as an explainer-of-things by trade, I can't sit with that.
 
