@@ -1,0 +1,58 @@
+---
+layout: default
+---
+
+<div class="container mt-6 px-2">
+
+  <div class="container max-w-6xl">
+    
+    <div class="grid py-4 grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+
+      <div class="max-w-full col-span-full">
+        <h1 class="mx-auto text-left font-bold leading-tight text-4xl md:text-6xl mb-12 lg:mb-20">{{title}}</h1>
+
+        {% if tags.includes("showLive") %}
+          <div id="livePreview" class="flex justify-center"></div>
+        {% endif %}
+      </div>
+
+
+      <div class="col-start-1 lg:col-span-2 row-end-auto">
+        {% if tags.includes("showButton") %}
+          <a href="{{link}}" 
+            target="_blank"
+            class="text-xl font-display lowercase font-bold text-teal-800 inline-block bg-teal-100 no-underline hover:bg-coral-500 hover:text-white py-2 px-8">see it live</a>
+        {% endif %}
+
+        <article class="prose lg:prose-xl mt-4 mb-8">
+          {{ content | safe }}
+        </article>
+      </div>
+
+      <div class="grid lg:grid-cols-1 grid-cols-2 gap-6 lg:gap-20 col-span-1">
+        {% set length = galleryImages | length %}
+      
+        {% for i in range(0, length) %}
+          {% set image = galleryImages[i] %}        
+
+          <img src="{{image}}?nf_resize=fit&w=500" alt="{{title}}" class="
+            border-gray-100 
+            border 
+            rounded-sm
+            lg:px-0
+            max-w-full"
+            srcset="{{ image }}?nf_resize=fit&w=550 550w,
+              {{ image }}?nf_resize=fit&w=1100 1100w" 
+            sizes="(min-width: 1024px) 550px, 100vw" />
+
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="mt-16">
+  {% include "../_includes/partials/footer-cta.html" %}
+</div>
