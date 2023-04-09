@@ -1,7 +1,7 @@
 ---
 title: Ribbons
 tags:
-  - onHomepage
+  - portfolio
   - showButton
   - showLive
 description: Animated generated art for your viewing pleasure
@@ -12,6 +12,7 @@ galleryImages:
   - /static/img/ribbons/ribbons-2.png
   - /static/img/ribbons/ribbons-3.png
   - /static/img/ribbons/ribbons-4.png
+layout: projects
 ---
 
 Click anywhere to generate a new set of ribbons!

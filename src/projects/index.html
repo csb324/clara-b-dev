@@ -1,5 +1,5 @@
 ---
-title: Portfolio
+title: Projects
 layout: default
 ---
 
@@ -9,23 +9,17 @@ layout: default
 
     <section class="mt-15">
 
-        {% set postslist = collections.portfolio %}
+        {% set postslist = collections.project %}
 
         {% for post in postslist | reverse %}
             <article class="my-16">
-                <a href="{{ post.url | url }}">
-                  <div class="relative">
-                    <img 
-                        src="{{ post.data.image }}?nf_resize=smartcrop&w=960&h=640" 
-                        alt=""  
-                        srcset="{{ post.data.image }}?nf_resize=smartcrop&w=480&h=320,
-                        {{ post.data.image }}?nf_resize=smartcrop&w=960&h=640 2x"
-                    />
-                    </div>      
-                </a>
                 <h2 class="font-bold text-3xl mb-2">
                     <a class="text-gray-900 hover:text-coral-500" href="{{ post.url | url }}">
-                      {{ post.data.title }}
+                        {% if post.data.title %}
+                            {{ post.data.title }}
+                        {% else %}
+                            Untitled
+                       {% endif %}
                     </a>
                 </h2>
 
@@ -35,7 +29,18 @@ layout: default
                     </p>
                 {% endif %}
 
+                <p>
+                    <a href="{{ post.url | url }}" class="text-teal-400 hover:text-coral-500 font-bold font-display uppercase text-md">
+                        Read more →
+                    </a>
+                </p>
+
             </article>
         {% endfor %}
     </section>
+</div>
+
+
+<div class="mt-16">
+    {% include "../_includes/partials/footer-cta.html" %}
 </div>

@@ -1,10 +1,9 @@
 ---
 layout: default
 title: Clara B. Development
-headline: hi! my name is clara, and i'm a web developer and designer based in washington dc.
+headline: hi! my name is clara and I make things.
 path: home
 ---
-
 
 <div class="bg-image-glitch bg-cover p-3">
   <img alt="Clara B Development" src="/static/img/white logo@4x.png" class="w-32 mx-auto my-8 md:my-12" />
@@ -15,12 +14,28 @@ path: home
   </div>
 </div>
 
-{% include "./_includes/homepage/capabilities.html" %}
-{% include "./_includes/homepage/past-work.html" %}
-<!-- {% include './_includes/partials/mission.html' %} -->
-{% include "./_includes/homepage/testimonials.html" %}
+<div class="container  max-w-5xl mx-auto my-16 px-5">
+  
+  <h2 class="text-center md:text-left text-2xl md:text-4xl mb-15">sorry but you're going to have to be more specific</h2>
+  
+  <div class="w-full flex flex-wrap md:flex-no-wrap justify-between my-8">
+    
+    <div class="w-full flex-none md:w-60 mb-10">
+      <h3 class="text-lg md:text-xl uppercase">I heard you could help me with a website</h3>
+      <p class="leading-relaxed mb-6">You heard right. I'm a web developer, designer, and consultant.</p>
+      <a href="/webdev" 
+        target="_blank"
+        class="text-xl font-display lowercase font-bold text-teal-800 inline-block bg-teal-100 no-underline hover:bg-coral-500 hover:text-white py-2 px-8">learn more</a>
+    </div>
 
+    <div class="w-full flex-none md:w-60 mb-10">
+      <h3 class="text-lg md:text-xl uppercase">what? I thought you were some kind of artist</h3>
+      <p class="leading-relaxed mb-6">God forbid a bitch contain multitudes.</p>
+      <a href="/portfolio" 
+        target="_blank"
+        class="text-xl font-display lowercase font-bold text-teal-800 inline-block bg-teal-100 no-underline hover:bg-coral-500 hover:text-white py-2 px-8">see some art</a>
+    </div>
+    
+  </div>
 
-<div class="mt-16">
-  {% include "./_includes/partials/footer-cta.html" %}
 </div>

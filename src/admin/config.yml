@@ -12,9 +12,26 @@ public_folder: "/static/img"
 local_backend: true
 # publish_mode: editorial_workflow
 collections:
-  - label: "Portfolio"
-    name: "portfolio"
+  - label: "Projects"
+    name: "Projects"
     folder: "src/projects"
+    create: true
+    editor: 
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Link", name: "link", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - label: "Gallery"
+        name: "galleryImages"
+        widget: "list"
+        summary: '{{fields.image}}'
+        field: {label: "Gallery image", name: "galleryImage", widget: "image"}
+  - label: "Portfolio"
+    name: "Portfolio"
+    folder: "src/portfolio"
     create: true
     editor: 
       preview: false

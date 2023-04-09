@@ -1,7 +1,8 @@
 ---
 items:
-  - text: My Work
+  - text: Web Development
+    url: "/webdev"
+  - text: Work
+    url: "/projects"
+  - text: Art
     url: "/portfolio"
-  - text: Let's Talk
-    url: "/work-with-me"
-    button: true
