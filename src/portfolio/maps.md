@@ -5,9 +5,9 @@ tags:
 description: Maps of places that do not exist.
 image: /static/img/dnd-maps/worldmap-v2.jpg
 galleryImagesWithCaptions: 
-  - image: /static/img/dnd-maps/worldmap-v1.jpg
+  - image: /static/img/dnd-maps/world-map-v1.jpg
     title: Map of Ninarith. October 2016
-  - image: /static/img/dnd-maps/worldmap-v2.jpg
+  - image: /static/img/dnd-maps/world-map-v2.jpg
     title: Map of Ninarith, 300 years later. October 2021
   - image: /static/img/dnd-maps/jalantar-textured.jpeg
     title: The City of Jalantar. January 2022
