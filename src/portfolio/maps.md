@@ -3,7 +3,7 @@ title: Maps
 tags:
   - portfolio
 description: Maps of places that do not exist.
-image: /static/img/dnd-maps/worldmap-v2.jpg
+image: /static/img/dnd-maps/world-map-v2.jpg
 galleryImagesWithCaptions: 
   - image: /static/img/dnd-maps/world-map-v1.jpg
     title: Map of Ninarith. October 2016
