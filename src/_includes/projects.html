@@ -19,7 +19,7 @@ layout: default
         {% endif %}
       </div>
 
-      <div class=" lg:col-start-2 lg:row-span-3">
+      <div class=" lg:col-start-2 {{extraClass | default("lg:row-span-3") }}">
         <h1 class="text-left font-bold leading-relaxed text-5xl">{{title}}</h1>
         {% if tags.includes("showButton") %}
           <a href="{{link}}" 

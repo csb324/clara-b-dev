@@ -1,0 +1,8 @@
+<div class="bg-gray-900 text-white font-display px-2">
+  {{item.title}}
+</div>
+<img src="{{item.image}}?nf_resize=fit&w=672" alt="{{item.title}}" class="max-w-full border border-gray-900"
+srcset="{{ item.image }}?nf_resize=fit&w=672 550w,
+  {{ item.image }}?nf_resize=fit&w=1100 1100w" 
+sizes="(min-width: 1024px) 550px, 100vw" />
+

@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<div class="container mt-6 px-2">
+
+  <div class="container max-w-6xl">
+  
+    <div class="lg:prose-xl prose mx-auto">
+      <h1 class="mx-auto text-left font-bold leading-tight text-4xl md:text-6xl mb-12 lg:mb-20">{{title}}</h1>
+
+      {% if tags.includes("showLive") %}
+        <div id="livePreview" class="flex justify-center"></div>
+      {% endif %}
+    </div>
+
+    {% if tags.includes("showButton") %}
+      <a href="{{link}}" 
+        target="_blank"
+        class="text-xl font-display lowercase font-bold text-teal-800 inline-block bg-teal-100 no-underline hover:bg-coral-500 hover:text-white py-2 px-8">see it live</a>
+    {% endif %}
+
+    <article class="lg:prose-xl prose mt-6 mb-8 mx-auto">
+      {{ content | safe }}
+    </article>
+
+    <div class="max-w-2xl lg:max-w-4xl container">
+      {% set length = galleryImagesWithCaptions | length %}
+
+      {% for i in range(0, length) %}
+        {% set item = galleryImagesWithCaptions[i] %}
+        <div class="mb-5">
+          {% include './partials/large-image.html' %}
+
+        </div>
+      {% endfor %}
+    </div>
+
+</div>

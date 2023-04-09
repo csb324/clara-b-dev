@@ -13,6 +13,7 @@ galleryImages:
   - /static/img/ribbons/ribbons-3.png
   - /static/img/ribbons/ribbons-4.png
 layout: projects
+date: 2021-09-06
 ---
 
 Click anywhere to generate a new set of ribbons!
